@@ -15,7 +15,18 @@
 var commonCharacters = function(string1, string2) {
  var str={}
 var result=""
- var max=""
+var indexMaxArg=0
+var maxArg=arguments[0]
+for (var i = 1; i < arguments.length; i++) {
+	if(arguments[i].length > maxArg){
+     indexMaxArg=i;
+	}
+}
+console.log(arguments)
+var s=arguments.splice(indexMaxArg,1);
+arguments.unshift(s)
+
+ /*var max=""
  var min=""
  if (string1.length > string2.length) {
  	max=string1;
@@ -33,5 +44,5 @@ var result=""
  	}
  }
 
- return Object.keys(str).join("");
+ return Object.keys(str).join("");*/
 };
