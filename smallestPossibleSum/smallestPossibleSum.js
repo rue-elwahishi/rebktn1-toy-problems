@@ -29,23 +29,40 @@
 
 // There are performance tests consisted of very big numbers and arrays of size at least 30000. Please write an efficient algorithm to prevent timeout.
 function smallestSum(array) {
-var array=new Uint8Array(...array)
-	//stop condition
-	console.log("max==>"+maxValue_index[1])
-	//***************
-var maxValue_index=maxValue(array)
-var minValue=Math.min(...array);
 
-var last=array.length-1
-	if(array[] > minValue){
-		array[maxValue_index[0]] = array[maxValue_index[0]] - minValue
-		
-		smallestSum(array)
+var arraySorted=new Uint8Array(array);
+arraySorted.sort();
+//console.log(arraySorted)
+
+	var j=arraySorted.length-2;
+	if(arraySorted[0]===arraySorted[arraySorted.length-1]){
+		return arraySorted
+	//***************
+}else{
+smallestSum(innerFunc(arraySorted,j))
+}
+	//return array.reduce((acc, val) => acc + val)
+	return arraySorted
+}
+
+function innerFunc(arraySorted,j) {
+		if(j!==0){
+		if(arraySorted[arraySorted.length-1] > arraySorted[j]){
+			arraySorted[arraySorted.length-1] = arraySorted[arraySorted.length-1]-arraySorted[j]
+			console.log(arraySorted)
+			innerFunc(arraySorted,j-1)}
+		}
+		return arraySorted;
 	}
 
-	//return array.reduce((acc, val) => acc + val)
-	return array
-}
+
+
+
+
+
+
+
+
 
 function maxValue(array){
 var max=array[0];
@@ -60,8 +77,3 @@ var arr=[]
 	return arr;
 }
 
-function sort(array){
-	for (var i = 0; i .length; i++) {
-
-	}
-}

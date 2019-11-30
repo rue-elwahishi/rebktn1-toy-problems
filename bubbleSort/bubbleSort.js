@@ -34,5 +34,24 @@
 
 
 var bubbleSort = function(array) {
-  // Your code here.
+ var sorted = sorted  || false
+
+if(sorted === false){
+	  sorted=true;
+  for (var i = 0; i < array.length-1; i++) {
+  	    
+  	    if( array[i] > array[i+1]){
+  	       
+  	    	var value = array.splice(i+1,1,array[i])[0]
+  	    	array.splice(i,1,value)
+
+	    sorted=false;
+  	    }	
+  }
+ 
+if(!sorted)
+   bubbleSort(array);
+}
+
+return array;
 };
