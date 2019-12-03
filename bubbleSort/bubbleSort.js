@@ -33,8 +33,7 @@
 // Feel free to add helper functions if needed.
 
 
-var bubbleSort = function(array) {
- var sorted = sorted  || false
+var bubbleSort = function(array,sorted=false) {
 
 if(sorted === false){
 	  sorted=true;
