@@ -13,7 +13,7 @@
 // Provided string will always be lower case, won't be empty and will have no special characters.
 
 var game=function(str){
-var consonants = /[BDCFGHJKLMNPQRSTVXZ]/i;//cD
+var consonants = /[BDCFGHJKLMNPQRSTVXZY]/i;//cD
 var specilConsonants = /[cd]/i;//cD
 
 var vowels = /[AEOIU]/i //oE
@@ -58,21 +58,23 @@ if(vowels.test(array[i])){
 
 
 		if(newCharAssci > 122){
-			console.log(newCharAssci)
+			
        newChar=String.fromCharCode((newCharAssci - 122) + 96)
-          console.log((newCharAssci - 122) + 96)
+        
+		}else{
+		if(newCharAssci < 97){
+    newChar=String.fromCharCode(( newCharAssci - 97  ) + 123)
 		}
 
-		if(newCharAssci < 97){
-		console.log(newCharAssci)
-    newChar=String.fromCharCode(( newCharAssci - 97  ) + 123)
-    console.log(( 97 - newCharAssci) + 123)
+		else{
+			newChar=String.fromCharCode(newCharAssci)
 		}
+}
+
 
 		if(!reverToOriginal.test(newChar)){
 		array[i] =  newChar
 	}
-
 }
 return  array.join('')
 
