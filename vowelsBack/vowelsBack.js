@@ -11,3 +11,69 @@
 // If a moved letter becomes 'c', 'o', 'd' or 'e', revert it back to it's original value.
 
 // Provided string will always be lower case, won't be empty and will have no special characters.
+
+var game=function(str){
+var consonants = /[BDCFGHJKLMNPQRSTVXZ]/i;//cD
+var specilConsonants = /[cd]/i;//cD
+
+var vowels = /[AEOIU]/i //oE
+var specilVowels=/[oe]/
+var reverToOriginal = /[code]/ //
+
+var array=str.split('')
+var newCharAssci=0;
+var newChar='';
+
+for (var i = 0; i < array.length; i++) {
+
+	if(consonants.test(array[i])){
+		if(specilConsonants.test(array[i])){
+			 if(array[i] === 'c'){
+			 		 newCharAssci = array[i].charCodeAt(0) - 1;
+			 }
+			 if(array[i] === 'd'){
+			 	 newCharAssci = array[i].charCodeAt(0) - 3;
+			 }
+		}else{
+		 newCharAssci = array[i].charCodeAt(0) + 9;
+  }
+
+
+	}
+
+
+
+if(vowels.test(array[i])){
+
+	if(specilVowels.test(array[i])){
+		if(array[i] === 'o'){
+			newCharAssci = array[i].charCodeAt(0) - 1;
+		}
+		if(array[i] === 'e'){newCharAssci = array[i].charCodeAt(0) - 3;}
+	}else{
+		 newCharAssci = array[i].charCodeAt(0) - 5;
+		}
+
+	}
+
+
+		if(newCharAssci > 122){
+			console.log(newCharAssci)
+       newChar=String.fromCharCode((newCharAssci - 122) + 96)
+          console.log((newCharAssci - 122) + 96)
+		}
+
+		if(newCharAssci < 97){
+		console.log(newCharAssci)
+    newChar=String.fromCharCode(( newCharAssci - 97  ) + 123)
+    console.log(( 97 - newCharAssci) + 123)
+		}
+
+		if(!reverToOriginal.test(newChar)){
+		array[i] =  newChar
+	}
+
+}
+return  array.join('')
+
+}

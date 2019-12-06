@@ -24,32 +24,9 @@ var characterFrequency=function(string){
 		}
 	}
 
-	var array= Object.keys(objOfChar).map((character)=>{
-			return [character,objOfChar[character]]
-	})
+return Object.entries(objOfChar).sort((a,b)=>b[1]-a[1])
 
-	return sort(array)
+	 
 }
 
 
-var sort = function(array,sorted=false) {
-
-if(sorted === false){
-	  sorted=true;
-  for (var i = 0; i < array.length-1; i++) {
-  	    
-  	    if( array[i][1] < array[i+1][1]){
-  	       
-  	    	var value = array.splice(i+1,1,array[i])[0]
-  	    	array.splice(i,1,value)
-
-	    sorted=false;
-  	    }	
-  }
- 
-if(!sorted)
-   sort(array);
-}
-
-return array;
-};
