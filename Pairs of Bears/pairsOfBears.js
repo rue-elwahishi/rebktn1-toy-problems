@@ -20,3 +20,46 @@ x will always be a positive integer, and s will never be empty
 
 
 */
+//Solution 1
+function matingPairs(n,str){
+	var solutionPair=["",false];
+	var pair=""
+	var nbPair=0;
+	
+for (var i = 0; i < str.length; i++) {
+
+	if(str[i] === 'B'){
+		if(i+1 === str.length) return solutionPair
+		if(str[i+1] === '8'){
+			pair =pair+str[i] + str[i+1];
+			solutionPair[0]=pair;
+			solutionPair[1]=+solutionPair[1]+1
+			i++;
+		}
+	}
+	else if(str[i] === '8'){
+			if(i+1 === str.length) return solutionPair
+		if(str[i+1] === 'B'){
+			pair =pair+str[i] + str[i+1];
+			solutionPair[0]=pair;
+			solutionPair[1]=+solutionPair[1]+1
+			i++;
+		}
+	}
+}
+if(solutionPair[1] >= n) solutionPair[1]=true
+else solutionPair[1]=false
+return solutionPair;
+}
+
+//Solution 2
+function matingPairs(n,str){
+	var result=["",false]
+	var regExp=/B8|8B/g
+	var arrayOfPairs=str.match(regExp)
+	if(arrayOfPairs.length >= n){
+    result[1]=true
+	}
+	result[0]=arrayOfPairs.join('');
+	return result
+}
