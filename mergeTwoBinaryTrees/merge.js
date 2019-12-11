@@ -70,7 +70,7 @@ else{
 		 tn.left = new TreeNode(t1.left.val)  ;
 		}
 		 else{
-tn.left = new TreeNode(t1.left.val  + t2.left.val);
+tn.left = new TreeNode(t1.left.val  + t2.left.val);    
 }
 }
 mergeTrees(t1.left,t2.left,tn)
