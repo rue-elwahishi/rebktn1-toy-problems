@@ -21,25 +21,27 @@
 
   	constructor(){
   		this.storage = {};
-  		this._size = 0;
-  		this._min = null
+  		this._size = 0;  	
+  		this._arrayOfMin=[]
   	}
 
  // add an item to the top of the stack
     push (value) {
     	if(this._min != null)
     	   { if(value < this.storage[this._size-1])
-              this._min = value;
+             this._arrayOfMin.push(value);
     	}else{
-    		this._min =value ;
+    		this._arrayOfMin.push(value);
     	}
+
     	this.storage[this._size] = value ;
     	this._size++;
     };
 
   // remove an item from the top of the stack
    pop() {
-
+   	if(this._arrayOfMin[this._arrayOfMin.length-1]  === this.storage[this._size-1])
+   		this._arrayOfMin.splice(-1)
    	  delete this.storage[this._size];
    	  this._size--
     };
@@ -51,7 +53,7 @@
   
   // return the _minimum value in the stack
     min() {
-       return this._min;
+       return this._arrayOfMin[this._arrayOfMin.length-1];
     };
 
   }
