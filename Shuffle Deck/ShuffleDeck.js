@@ -1,5 +1,6 @@
-// Shuffle Deck
-// Given an array containing a deck of cards, implement a function that shuffles the deck. The helper function orderedDeck() is not necessary for your solution; it is provided to create an ordered deck if you debug your code in the console or using snippets.
+//Shuffle Deck
+//Given an array containing a deck of cards, implement a function that shuffles the deck. 
+//The helper function orderedDeck() is not necessary for your solution; it is provided to create an ordered deck if you debug your code in the console or using snippets.
 // Example:
 //      var deck = orderedDeck();     // ["A♥","2♥","3♥",...,"J♦","Q♦","K♦"]
 //      shuffleDeck(deck);            // ["2♠","J♣","A♦", ... ,"7♣","8♣","K♠"]
@@ -12,7 +13,8 @@
 // to accidentally create a biased algorithm.
 
 // A further note on randomness:
-// Technically, a computer-shuffled deck will usually be “pseudorandom”, not “truly” random. However, the difference between the two is too small to be detectable by any known test.
+// Technically, a computer-shuffled deck will usually be “pseudorandom”, not “truly” random. However, the difference between the two is too small to be
+// detectable by any known test.
 // See: http://en.wikipedia.org/wiki/Pseudorandom_number_generator
 // A human shuffler is much more biased; it takes around seven normal “riffle” shuffles before a real deck is actually randomized. 
 // See: https://www.dartmouth.edu/~chance/teaching_aids/books_articles/Mann.pdf
@@ -36,3 +38,7 @@
 //   });
 //   return deck;
 // };
+
+var shuffleDeck = (deck) => {
+
+}
